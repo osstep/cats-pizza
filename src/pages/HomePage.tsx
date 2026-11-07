@@ -49,7 +49,7 @@ export function HomePage() {
   return (
     <section className="home-page">
       <div className="home-page__header">
-        <h1>Заказ котиков</h1>
+        <h1 data-testid="homePageHeader">Заказ котиков</h1>
         <p>Выберите идеального котика для доставки на дом.</p>
       </div>
 
