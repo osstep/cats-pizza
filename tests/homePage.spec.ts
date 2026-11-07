@@ -6,3 +6,12 @@ test('Check header', async({page}) => {
   await page.goto('');
   await expect(header).toBeVisible();
 });
+
+test('Check card list items', async({page}) => {
+  const firstCard = page.getByTestId('catCard1');
+  const listCard = page.getByTestId(/catCard/);
+
+  await page.goto('');
+  await expect(firstCard).toBeVisible();
+  expect(await listCard.count()).toBe(9);
+});

@@ -2,12 +2,13 @@ import type { Cat } from '../../data/cats';
 
 interface CatCardProps {
   cat: Cat;
-  onAddToCart: () => void;
+  index: number;
+  onAddToCart: () => void;   
 }
 
-export function CatCard({ cat, onAddToCart }: CatCardProps) {
+export function CatCard({ cat, index, onAddToCart }: CatCardProps) {
   return (
-    <article className="cat-card">
+    <article className="cat-card" data-testid={`catCard${index + 1}`}>
       <img className="cat-card__image" src={cat.imageUrl} alt={cat.name} />
       <div className="cat-card__body">
         <h3 className="cat-card__title">{cat.name}</h3>

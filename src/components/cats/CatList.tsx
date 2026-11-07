@@ -10,8 +10,8 @@ interface CatListProps {
 export function CatList({ cats, onAddToCart }: CatListProps) {
   return (
     <div className="cat-list">
-      {cats.map((cat) => (
-        <CatCard key={cat.id} cat={cat} onAddToCart={() => onAddToCart(cat)} />
+      {cats.map((cat, index) => (
+        <CatCard key={cat.id} cat={cat} index={index} onAddToCart={() => onAddToCart(cat)} />
       ))}
     </div>
   );
